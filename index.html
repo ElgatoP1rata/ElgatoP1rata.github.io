@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Incriptador</title>
+</head>
+
+<body>
+        
+
+    
+    <header>
+        <div id="titulo">
+               <img id ="logo"src="img/Logo.png" alt="">
+               <p>Incriptador de texto</p> 
+             
+        </div>
+
+    </header>
+    
+    
+    <main>
+        <div class="container">
+            <div id="Incriptador">
+                    <div id="texto-incriptado">
+                        <textarea  id="texto" placeholder="Ingresa el texto en esta parte"></textarea>
+                    </div>
+                    <span id="label-spawn"><img src="img/bi_exclamation-circle-fill.png"> Solo letras minusculas y sin acento</span>
+                    <div class="botones-funcion">
+                        
+                            <button class="botones" id="encriptar" onclick=encriptar(codigo,voca) >Encriptar</button>
+                            <button class="botones" id="desencriptar" onclick=encriptar(voca,codigo) >Desencriptar</button>
+                    </div>
+            </div>
+
+            <div id="panel-incriptado">
+                    <div id="img-muñeco"><img id="img" src="img/Muñeco.png" alt=""> </div>
+                    <div id="texto-salida">
+                            <textarea  class="hola"   id="gao" disabled>NINGUN MENSAJE FUE ENCONTRADO</textarea>
+                            <textarea  class="hola"   id="salida"   disabled>EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO </textarea> 
+                            </textarea>
+                    
+                    
+                    
+                    </div>       
+                    
+                           <div class="botones-funcion" id="botones-copiar">
+                            <button class="botones" id="copy" onclick=copyToClickBoard() >Copiar</button>
+                            <button class="botones" id="limpiar" onclick="limpiar()" >limpiar</button>
+                     </div>                     
+                    
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+   
+   
+    <footer><p>@derechos reservados</p></footer>
+    
+</body>
+<script src="app.js"></script>
+
+</html>

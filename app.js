@@ -1,4 +1,6 @@
 
+
+const textoInvalido = /[^a-z " "]/g
 let codigo = ["e","i","a","o","u"] ;
 let voca =["enter","imes","ai","ober","ufat"]
 let img= document.getElementById("img-muñeco")
@@ -9,43 +11,11 @@ let titulo_salida=  document.getElementById("gao")
 
 function limpiar(){
     titulo_salida.innerHTML="Limpio y Preparado"
-    entrada.value=""
-    ted.innerHTML="Si desea continuar ingrese  un texto a incriptar"
+    document.getElementById("texto").value="";   
+    ted.innerHTML="Si desea continuar ingrese un texto a incriptar"
     img.style.display="block"
 
-
-
 }
-
-
-
-function encriptar(a, b){
-    titulo_salida.innerHTML="Mensaje Encriptado/  Desencriptado:"
-
-    let entrada=document.getElementById("texto").value
-   
-
- 
-   
-    if(entrada==""){
-        alert("ingresa un texto para a incriptar/desencriptar")
-        titulo_salida.innerHTML="NINGUN MENSAJE DETECTADO" ;
-        ted.innerHTML="NO SE ENCUENTRA NINGUN MENSAJE";
-    }else{
-        img.style.display="none"
-        a.forEach(function callback(text, index) {
-        entrada = entrada.replace(new RegExp(text, 'g'), b[index]);});
-        console.log(entrada)
-        console.log(ted)
-       
-            return ted.innerHTML=entrada
-        }
-
-        }
-
-    
-    
-    
     
     function copyToClickBoard() {
         var content = document.getElementById('salida').innerHTML;
@@ -67,6 +37,49 @@ function encriptar(a, b){
         }
     }
     
+
+    function encriptar(a, b){
+        titulo_salida.innerHTML="Mensaje Encriptado/  Desencriptado:"   
+        let entrada=document.getElementById("texto").value
+       
+                        if (textoInvalido.test(entrada)===true) {
+                            alert("Ingrese valores admitidos");
+                            document.getElementById("texto").value = "";
+                            console.log("Texto invalido detectado");
+                            return;
+                        }
+			else if(textoInvalido.test(entrada)===false){
+                    
+                         if(entrada===""){
+                            alert("ingresa un texto para a incriptar/desencriptar")
+                            titulo_salida.innerHTML="NINGUN MENSAJE DETECTADO" ;
+                            ted.innerHTML="NO SE ENCUENTRA NINGUN MENSAJE";
+                            return
+                        }else{
+                            img.style.display="none"
+                            a.forEach(function callback(text, index) {
+                            entrada = entrada.replace(new RegExp(text, 'g'), b[index]);});
+                            console.log(entrada)
+                            console.log(ted)
+                        
+                                return ted.innerHTML=entrada
+                            }
+                                 return  
+                        
+                        }  
+                        
+                        
+        }
+                            
+        
+       
+       
+       
+       
+        
+     
+       
+                       
 
    
     

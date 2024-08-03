@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Andale Mono";
 
 }
 :root{
@@ -88,7 +89,7 @@ main{
    display: flex;
    flex-direction: column;
 width: 80%;
-height: 70%;
+height: 60%;
     
  }
 
@@ -131,7 +132,8 @@ height: 70%;
 
     height:40%;
     width: 80%;
-  
+    gap: 15px;
+
    
 }
 #img{
@@ -146,9 +148,9 @@ height: 70%;
     background-color: white;
     border-radius: 25px;
     width: 100%;
-    gap:5px;
-   
-    height:60%
+    gap:25px;
+    justify-content: center;
+    height:80%
 }
 .hola{
     font-size: 1.28rem;
@@ -221,20 +223,23 @@ footer{
      height: 100%;
     }
     #texto-salida{
-     height: 80%; 
+     height: 100%; 
  
     }
     #panel-incriptado{
      margin-top: 2%;
-     height: 50%;
+     height: 80%;
     }
-   
+    .hola{
+        max-width: 500px;
+    }
      }
   
 @media (min-width:950px)and (max-width:1800px) {
    
     #texto-salida{
         height: 80%;
+        justify-content: none;
     }
     main{
         height: 90%;
@@ -261,10 +266,10 @@ footer{
         height: 250px;
     }
     
+    
 
 #panel-incriptado{
    padding: 15px;
-   
     margin-top: -5%;
     margin-right: 5%;
     margin-left: 8%;

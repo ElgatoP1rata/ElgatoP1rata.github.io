@@ -1,6 +1,25 @@
 
 
-const textoInvalido = /[^a-z " "]/g
+/*
+ próximamente
+ -posible emplementacion de animacines chingonas (no le se anime.js :_v)
+ -cambiar por fin te titulo de la pagina
+ 
+ */
+
+/* Versions 3.001 
+  al volver a realizar una "retesteo" en la validacion de los caracteres permitidos me percate de que la letra "ñ" era contada como invalida esto siendo siendo erroneo(pobre letra nadie la quiere :_v)
+
+    SOLUCIONADO .....
+*/
+
+/*Versions 3.0 
+  1.-Implementacion del la validacion de los caracteres permitos ...
+
+
+ */
+
+const textoInvalido = /[^a-z " " ^ñ]/g
 let codigo = ["e","i","a","o","u"] ;
 let voca =["enter","imes","ai","ober","ufat"]
 let img= document.getElementById("img-muñeco")
@@ -8,7 +27,9 @@ let entrada=document.getElementById("texto").value ;
 let ted = document.getElementById("salida"); 
 let titulo_salida=  document.getElementById("gao")
 
-
+/*Versions 2.01 
+1.-implementacion de la funcion para limpiar el text area de entra de texto
+*/
 function limpiar(){
     titulo_salida.innerHTML="Limpio y Preparado"
     document.getElementById("texto").value="";   
@@ -17,13 +38,21 @@ function limpiar(){
 
 }
     
+/*version 2.0 un link mediafire  Uwu 
+1.- Unificacion de las funciones "encriptar"  and "desencriptar" (en que mejora esto ... la verdad no se pero se ve mas fachero )
+2.-Implementacion de la funcion para copiar el text que se encruentra en el tex area de salida
+3.-Mejoras en el css para impedir : 
+*/
     function copyToClickBoard() {
-        var content = document.getElementById('salida').innerHTML;
-        console.log(content=="Si desea continuar ingrese  un texto a incriptar")
-        console.log(content=="EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO " ||content=="Si desea continuar ingrese  un texto a incriptar" )
        
+       //recupera el texto de la caja donde aparece el texto incriptado//
+        var content = document.getElementById('salida').value.trim();
        
-         if(content=="EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO "|| content=="Si desea continuar ingrese  un texto a incriptar"){
+        console.log(content=="EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO " || content=="Si desea continuar ingrese un texto a incriptar"||
+            content=="EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO")
+            console.log(content)
+       
+         if(content=="EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO " || content=="Si desea continuar ingrese un texto a incriptar" ||content=="EN ESTA SECCION SE MOSTRARA EL TEXTO ENCRIPTADO"){
             alert("copiaste el texto por defecto ")
             navigator.clipboard.writeText(content)
 
@@ -38,24 +67,33 @@ function limpiar(){
     }
     
 
+
     function encriptar(a, b){
         titulo_salida.innerHTML="Mensaje Encriptado/  Desencriptado:"   
         let entrada=document.getElementById("texto").value
        
-                        if (textoInvalido.test(entrada)===true) {
+                 
+        //validacion de los carateres permitidos//
+        
+        
+            if (textoInvalido.test(entrada)===true) {
                             alert("Ingrese valores admitidos");
                             document.getElementById("texto").value = "";
                             console.log("Texto invalido detectado");
                             return;
                         }
-			else if(textoInvalido.test(entrada)===false){
-                    
+		
+        
+        
+            else if(textoInvalido.test(entrada)===false){
+                    //verificacion si el text area de entrada esta vacio//
                          if(entrada===""){
                             alert("ingresa un texto para a incriptar/desencriptar")
                             titulo_salida.innerHTML="NINGUN MENSAJE DETECTADO" ;
                             ted.innerHTML="NO SE ENCUENTRA NINGUN MENSAJE";
                             return
                         }else{
+
                             img.style.display="none"
                             a.forEach(function callback(text, index) {
                             entrada = entrada.replace(new RegExp(text, 'g'), b[index]);});
@@ -82,21 +120,7 @@ function limpiar(){
                        
 
    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //primer version de incriptador (sin investigar demasiado ) funcional Uwu (creo... ) //
 
 /*let texto=""
 console.log(texto);
@@ -177,6 +201,19 @@ function desencriptar(texto){
    }
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

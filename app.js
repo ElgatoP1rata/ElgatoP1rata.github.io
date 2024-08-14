@@ -1,5 +1,6 @@
 
 
+
 /*
  próximamente
  -posible emplementacion de animacines chingonas (no le se anime.js :_v)
@@ -19,7 +20,7 @@
 
  */
 
-const textoInvalido = /[^a-z " " ^ñ]/g
+const textoInvalido = /[^a-z " " ^ñ] . , - ()/g
 let codigo = ["e","i","a","o","u"] ;
 let voca =["enter","imes","ai","ober","ufat"]
 let img= document.getElementById("img-muñeco")
@@ -70,7 +71,7 @@ function limpiar(){
 
     function encriptar(a, b){
         titulo_salida.innerHTML="Mensaje Encriptado/  Desencriptado:"   
-        let entrada=document.getElementById("texto").value
+        let entrada=document.getElementById("texto").value.trim()
        
                  
         //validacion de los carateres permitidos//

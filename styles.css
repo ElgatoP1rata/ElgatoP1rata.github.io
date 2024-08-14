@@ -22,6 +22,8 @@
     font-family: "Andale Mono";
 
 }
+
+
 :root{
     --color-primario: #0A3871;
   
@@ -41,7 +43,7 @@ body{
     background-color:antiquewhite
 }
 #salida{
-    height: 50%;
+    height: 80%;
 }
 header{
     height: 12%;
@@ -141,7 +143,7 @@ height: 60%;
     height: 0px;
 }
 #texto-salida{
-   
+    padding-top: 15px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -149,9 +151,12 @@ height: 60%;
     border-radius: 25px;
     width: 100%;
     gap:25px;
-    justify-content: center;
-    height:80%
+    
+    height:80%;
+    field-sizing: content;
+   
 }
+
 .hola{
     font-size: 1.28rem;
     border: 0px;
@@ -165,9 +170,11 @@ height: 60%;
 #gao{
     font-weight: bold;
     text-align: center;
-
+    resize: none;
+    height: 55.5px;
    
 }
+
 
 
 
@@ -182,14 +189,13 @@ height: 60%;
 
 
 footer{
-    height: 7vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:var(--color-primario);
     margin-top: 10px;
-    
-    
+    color:white ;
 }
 #img-muñeco{
     width: 0px;
@@ -199,10 +205,32 @@ footer{
     flex-direction: row;
 }
 
+header nav a img {
+
+    width: 85%;
+}
+header nav{
+    display: flex;
+    position: absolute;
+    top:8%;
+    right: 4%;
+
+
+
+}
+
 
 
  
 @media (min-width:700px) and (max-width:950px){
+    header nav{
+       
+        top:4%;
+        right: 7%;
+    
+    
+    }
+    
     
     .botones-funcion{
      flex-direction:row;
@@ -265,6 +293,13 @@ footer{
         width: 250px;
         height: 250px;
     }
+    header nav{
+       
+        top:4%;
+        right: 7%;
+    
+    
+    }
     
     
 
@@ -302,11 +337,11 @@ footer{
 #texto{
     height: 80%;
     font-size: 35px;
-    color:var(--color-primario) ;
+    
 }
 #gao{
     width: 110%;
-    height: 50.5px;
+    height: 55.5px;
 }
 
 }
